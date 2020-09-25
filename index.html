@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="sticky-nav">
+        <div></div>
+        <div class="logo">Todos List</div>
+        <button class="sticky" id="load-all-todos">All todos</button>
+    </nav>
+    <main>
+        <div class="inp-group">
+            
+                <input type="text" id="title-input" placeholder="enter title..."
+                name="name" class="inp-title" />
+                <input type="datetime-local" id="time-input" placeholder="enter time..."
+                name="time" class="inp-time" />
+            
+            <button class="main-btn" id="add-title-btn">Add Todo</button>
+        </div>
+        <div id="error"> </div>
+        <div class="search" id="search">
+            <input type="text" placeholder="search by title..."
+            id="search-input" class="inp-search" >            
+            <button class="search-btn" id="search-btn">Search</button>
+        </div>
+        
+        <div id="table" class="table">
+            <div class="thead">
+                <div class="thead-data">ID</div><div class="thead-data">To do</div><div class="thead-data">Time</div><div class="thead-data">Edit</div><div class="thead-data">Delete</div>
+
+            </div>
+            <div id="tbody" class="tbody"></div>
+        </div>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

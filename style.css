@@ -1,0 +1,245 @@
+*{
+    border: 0;
+    margin: 0;
+}
+:root{
+    --all-todo-color: rgb(222, 217, 255);
+    --all-todo-color-hover: rgb(149, 147, 255);
+    --nav-color: rgb(22, 27, 77);
+    --success-color: rgb(58, 221, 58);
+    --danger-color: rgb(255, 158, 158);
+    --edit-btn:rgb(221, 221, 221);
+    --edit-btn-hover-bg: rgb(0, 0, 0);
+    --edit-btn-hover-text: rgb(255, 255, 255);
+    --delete-btn:rgb(253, 184, 184);
+    --delete-btn-hover-bg: rgb(251, 36, 36);
+    --delete-btn-hover-text: white;
+    --cancel-btn:rgb(255, 223, 162);
+    --cancel-btn-hover: rgb(255, 196, 87);
+    --submit-btn: rgb(251, 170, 174);
+    --submit-btn-hover: rgb(255, 101, 101);
+    --main-btn: rgb(185, 187, 255);
+    --main-btn-hover-bg: rgb(46, 43, 253);
+    --main-btn-hover-text: rgb(220, 221, 255);
+    --input-border:rgb(179, 178, 178);
+    --input-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+    --main-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.3);
+    --row-hover: rgb(235, 232, 232);
+}
+body{
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+main{
+    width: 70%;
+    margin: 5px auto 50px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    text-align: center;
+    box-shadow: var(--main-shadow);
+}
+.sticky-nav{
+    background-color: var(--nav-color) ;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    color: aliceblue;
+    font-size: 40px;
+}
+.sticky{
+    background-color: var(--all-todo-color);
+    width: 100px;
+    height: 50px;
+    border-radius: 0;
+}
+.sticky:hover{
+    background-color: var(--all-todo-color-hover);
+}
+.sticky:focus{
+    outline: none;
+}
+#error{
+    width: 30%;
+    margin-top: 20px;
+    color: rgb(253, 253, 253);
+    background-color: var(--delete-btn-hover-bg);
+}
+.table{
+    width: 80%;
+    display: grid;
+    grid-template-rows: 20px auto;
+    margin: 1px auto;
+    margin: 40px auto;
+    border: 1px rgb(139, 136, 136) solid;
+}
+.thead{
+    display: grid;
+    background-color: var(--edit-btn);
+    grid-template-columns: 0.5fr 3fr 3.5fr 1.5fr 1.5fr;
+    border-bottom: 1px solid var(--input-border);
+    padding-bottom: 2px;
+}
+.tbody{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.t-row{
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 3.5fr 1.5fr 1.5fr;
+    padding: 5px;
+    align-items: center;
+    border-bottom: var(--input-border) 1px solid ;
+    overflow-wrap: break-word;
+}
+.t-row:hover{
+    background-color: var(--row-hover);
+}
+#noDataRow{
+    padding: 30px;
+    font-size: large;
+}
+
+.search{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 7fr 1fr 2fr;
+    text-align: center;
+    justify-items: center;
+}
+.inp-group{
+    margin: 1px auto;
+    display: inline;
+}
+
+.inp-search{
+    width: 70%;
+    height: 30px;
+    box-shadow: var(--input-shadow);
+    border-radius: 5px;
+    background-color: var(--all-todo-color);
+}
+.inp-search:focus{
+    outline: none;
+}
+.inp-title, .inp-time{
+    height: 30px;
+    box-shadow: var(--input-shadow);
+    width: 35%;
+    border-radius: 5px;
+}
+.inp-title:focus, .inp-time:focus{
+    outline: none;
+}
+.inp-edit{
+    width: 80%;
+    height: 20px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+}
+button{
+    font-weight: 550;
+    height: 30px;
+    border-radius: 5px;
+}
+button:hover{
+    cursor: pointer;
+}
+.main-btn{   
+    width: 78px;
+    background-color:var(--main-btn);
+}
+.main-btn:hover{
+    background-color: var(--main-btn-hover-bg);
+    color: var(--main-btn-hover-text);
+}
+.search-btn{
+    width: 55px;
+    padding: 1px;
+    margin: 0;
+    background-color: var(--main-btn);
+}
+.search-btn:hover{
+    background-color: var(--main-btn-hover-bg);
+    color: var(--main-btn-hover-text);
+}
+.edit{
+    width: 55px;
+    background-color: var(--edit-btn);
+}
+.edit:hover{
+    background-color: var(--edit-btn-hover-bg);
+    color: var(--edit-btn-hover-text);
+}
+.cancel-btn{
+    width: 55px;
+    background-color: var(--cancel-btn);
+    margin-bottom: 2px;
+    font-size: 12px;
+    text-align: center;
+}
+.cancel-btn:hover{
+    background-color: var(--cancel-btn-hover);
+}
+.submit-btn{
+    width: 53px;
+    font-size: 12px;
+    background-color: var(--submit-btn);
+    text-align: center;
+}
+.submit-btn:hover{
+    background-color: var(--submit-btn-hover);
+}
+
+.delete{
+    width: 53px;
+    background-color: var(--delete-btn);
+}
+.delete:hover{
+    background-color: var(--delete-btn-hover-bg);
+    color: var(--delete-btn-hover-text);
+}
+
+.success{
+    background-color: var(--success-color);
+}
+@media (max-width:1050px){
+    main{
+        width: 85%;
+    }
+    .table{
+        width: 85%;
+    }
+}
+@media (max-width: 860px){
+    main{
+        width: 80%;
+    }
+    .table{
+        width: 90%;
+    }
+}
+@media (max-width: 745px){
+    main{
+        width: 90%;
+    }
+    .table{
+        width: 95%;
+    }
+}
+@media (max-width: 580px){
+    main{
+        font-size: 12px;
+    }
+    .inp-group{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .table{
+        width: 99%;
+    }
+}
